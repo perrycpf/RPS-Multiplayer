@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale =1">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
         <!-- Awesome Font -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,23 +17,26 @@
     </head>
     <body>
         <div class="container">
+            <!-- Player join the game-->
             <header>
                 <h1>rock paper scissors</h1>
             </header>
-            <!-- Player join the game-->
-            <div class="row col-12 player-input justify-content-center align-items-center">
-                <label for="input-name">player name</label>
-                <input type="text" id="input-name" placeholder="Enter Your Name">
-                <button id="submit-name" class="btn btn-primary">submit</button>
+            <div class="row col-12 justify-content-center align-items-center">
+                <div class="player-input">
+                    <label for="input-name">player name</label>
+                    <input type="text" id="input-name" placeholder="Enter Your Name">
+                    <button id="submit-name" class="btn btn-primary">submit</button>
+                </div>
+                <p id="greeting"></p>
             </div>
             <div class="d-flex align-items-center">
                 <!-- Player 1 panel -->
                 <div id ="playerOne">
                     <div id="playerOneName" class="badge">waiting for player 1</div>
-                        <div class="card card-1" style="width: 20rem;">
-                        <img class="card-img-top p1ChoiceImg">
+                        <div class="card card-1">
+                        <img class="card-img-top p1ChoiceImg" src="./assets/images/game.jpg" alt="User Choice">
                         <div class="card-body">
-                            <div class="card-title text-center">Win:<span id="p1WinCount"></span> Lose:<span id="p1LoseCount"></span></div>
+                            <div class="card-title text-center">Win: <span id="p1WinCount"></span> Lose: <span id="p1LoseCount"></span></div>
                             <div id="p1Choice" class="d-flex justify-content-around">
                                 <div class="option-1 rock-1" data-playerChoice="rock"></div>
                                 <div class="option-1 paper-1" data-playerChoice="paper"></div>
@@ -44,16 +46,19 @@
                     </div>
                 </div>
                 <!-- Game Result Panel -->
-                <div class="card" style="width: 20rem;">
-                    <div id="resultPanel" class="card-body text-center">Let's play</div>
+                <div id="cardPanel" class="card" style="width: 20rem">
+                    <div id="resultPanel" class="card-body text-center">
+                        <div id="panel-message">Let's play</div>
+                        <div id="panel-result"></div>
+                    </div>
                 </div>
                 <!-- Player 2 panel -->
                 <div id ="playerTwo">
                     <div id="playerTwoName" class="badge">waiting for player 2</div>
-                        <div class="card card-2" style="width: 20rem;">
-                        <img class="card-img-top p2ChoiceImg">
+                        <div class="card card-2">
+                        <img class="card-img-top p2ChoiceImg" src="./assets/images/game.jpg" alt="User Choice">
                         <div class="card-body">
-                            <div class="card-title text-center">Win:<span id="p2WinCount"></span> Lose:<span id="p2LoseCount"></span></div>
+                            <div class="card-title text-center">Win: <span id="p2WinCount"></span> Lose: <span id="p2LoseCount"></span></div>
                             <div id="p2Choice" class="d-flex justify-content-around">
                                 <div class="option-2 rock-2" data-playerChoice="rock"></div>
                                 <div class="option-2 paper-2" data-playerChoice="paper"></div>
@@ -68,7 +73,7 @@
                 <p class="list-group-item text-center">chat room</p>
                 <div class="d-flex">
                     <input type="text" id="chat-message" class="form-control" placeholder="Enter Message">
-                    <button id="chat-send" class="btn btn-standard">send</button>
+                    <button id="chat-send" class="btn btn-primary">send</button>
                 </div>
                 <ul class="list-group"></ul>
             </section>
